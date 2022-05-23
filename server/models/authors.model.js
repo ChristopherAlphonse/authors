@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
-const AuthorsSchema = {
-  name: {
-    type: String,
-    required: [true, "name is required"],
-    minLength: [4, "minimum 4 characters for te name"],
+const AuthorsSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "name is required"],
+      minLength: [4, "minimum 4 characters for the name"],
+    },
   },
-};
-
+  { timestamps: true }
+);
 module.exports = mongoose.model("Authors", AuthorsSchema);
