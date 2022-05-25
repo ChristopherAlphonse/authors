@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import "./Edit.css";
 
 const EditAuthor = (props) => {
   const { id } = useParams();
@@ -37,7 +38,9 @@ const EditAuthor = (props) => {
           {authorNotFoundError} <Link to="/new">Click here to add author</Link>
         </h2>
       ) : null}
-      <Link to="/">Home</Link>
+      <div className="test">
+        <Link to="/">Home</Link>
+      </div>
       <div className="form-group">
         <label htmlFor="name">Name</label>
         <input
