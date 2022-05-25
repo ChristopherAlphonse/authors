@@ -3,7 +3,7 @@ import DisplayAll from "./components/DisplayAll";
 import AuthorForm from "./components/AuthorForm";
 import EditAuthor from "./components/EditAuthor";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h1>Favorite Authors</h1>
@@ -16,6 +16,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

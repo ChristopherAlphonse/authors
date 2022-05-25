@@ -26,10 +26,10 @@ const AuthorForm = () => {
           <Link to="/">Home</Link>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
+              <label htmlFor="name" >Name</label>
+              <input 
                 type="text"
-                className="form-control"
+                className="form-control "
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />

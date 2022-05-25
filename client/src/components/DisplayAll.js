@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-
 import axios from "axios";
-
 import { Link } from "react-router-dom";
+
 const DisplayAll = () => {
   const [allAuthors, setAllAuthors] = useState([]);
   useEffect(() => {
@@ -49,7 +48,7 @@ const DisplayAll = () => {
               {allAuthors.map((author, index) => {
                 return (
                   <tr key={author._id}>
-                    <td>{author.name}</td>
+                    <td className="n-ame">{author.name}</td>
                     <td>
                       <Link to={`/edit/${author._id}`}>
                         <button className="btn btn-primary">Edit</button>

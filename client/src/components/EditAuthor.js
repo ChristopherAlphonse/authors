@@ -19,7 +19,7 @@ const EditAuthor = (props) => {
         console.log(err.response);
         setAuthorNotFoundError(`Author not found using that ID`);
       });
-  }, []);
+  }, [id]);
 
   const submitHandler = (e) => {
     e.preventDefault();
