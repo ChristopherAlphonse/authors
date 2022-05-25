@@ -5,14 +5,18 @@ import "./Edit.css";
 
 const EditAuthor = (props) => {
   const { id } = useParams();
-  const [authorName, setAuthorName] = useState("");
+  const [authorName, setAuthorName] = useState({});
   const [errors, setErrors] = useState({});
   const [authorNotFoundError, setAuthorNotFoundError] = useState("");
+
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/author/${id}`)
       .then((response) => {
-        setAuthorName(response.data.name);
+        setAuthorName(response.data.queriedOne.name);
+        console.log(response.data.queriedOne);
+        console.log(response.data.queriedOne._id);
+        console.log(response.data.queriedOne.name);
       })
       .catch((err) => {
         setAuthorNotFoundError(`Author not found using that ID`);
@@ -41,6 +45,7 @@ const EditAuthor = (props) => {
       <div className="test">
         <Link to="/">Home</Link>
       </div>
+      <div>Editing the author:</div>
       <div className="form-group">
         <label htmlFor="name">Name</label>
         <input
