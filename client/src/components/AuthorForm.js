@@ -11,11 +11,9 @@ const AuthorForm = () => {
     axios
       .post("http://localhost:8000/api/author", { name })
       .then((response) => {
-        console.log(response);
         navigate("/");
       })
       .catch((err) => {
-        console.log(err.response.data.err.errors);
         setErrors(err.response.data.err.errors);
       });
   };
@@ -26,8 +24,8 @@ const AuthorForm = () => {
           <Link to="/">Home</Link>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name" >Name</label>
-              <input 
+              <label htmlFor="name">Name</label>
+              <input
                 type="text"
                 className="form-control "
                 onChange={(e) => setName(e.target.value)}

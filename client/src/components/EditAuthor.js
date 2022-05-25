@@ -7,33 +7,29 @@ const EditAuthor = (props) => {
   const [authorName, setAuthorName] = useState("");
   const [errors, setErrors] = useState({});
   const [authorNotFoundError, setAuthorNotFoundError] = useState("");
-  console.log(id);
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/author/${id}`)
       .then((response) => {
-        console.log(response.data);
         setAuthorName(response.data.name);
       })
       .catch((err) => {
-        console.log(err.response);
         setAuthorNotFoundError(`Author not found using that ID`);
       });
   }, [id]);
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setAuthorName("");
 
     axios
       .put(`http://localhost:8000/api/author/${id}`, { name: authorName })
-      .then((response) => {
-        console.log(response);
-      })
+      .then((response) => {})
       .catch((err) => {
-        console.log(err.response.data.err.errors);
         setErrors(err.response.data.err.errors);
       });
   };
+
   return (
     <form onSubmit={submitHandler}>
       {authorNotFoundError ? (
@@ -52,7 +48,7 @@ const EditAuthor = (props) => {
         />
         {errors.name ? <p>{errors.name.message}</p> : null}
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button onClick={submitHandler} type="submit" className="btn btn-primary">
         SUBMIT
       </button>
     </form>

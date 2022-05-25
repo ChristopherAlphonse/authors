@@ -8,11 +8,10 @@ const DisplayAll = () => {
     axios
       .get("http://localhost:8000/api/author")
       .then((response) => {
-        console.log(response.data);
         setAllAuthors(response.data);
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log("error in displaying", err.response);
       });
   }, []);
 
@@ -20,8 +19,6 @@ const DisplayAll = () => {
     axios
       .delete(`http://localhost:8000/api/author/${idFromBelow}`)
       .then((response) => {
-        console.log("success deleting author");
-        console.log(response);
         const filteredAuthors = allAuthors.filter((author) => {
           return author._id !== idFromBelow;
         });
