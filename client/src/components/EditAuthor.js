@@ -56,9 +56,15 @@ const EditAuthor = (props) => {
         />
         {errors.name ? <p>{errors.name.message}</p> : null}
       </div>
-      <button onClick={submitHandler} type="submit" className="btn btn-primary">
-        SUBMIT
-      </button>
+      <div className="btn-moved">
+        <button
+          onClick={submitHandler}
+          type="submit"
+          className="btn btn-primary "
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 };

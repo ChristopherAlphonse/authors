@@ -34,7 +34,7 @@ const AuthorForm = () => {
               {errors.name ? <p>{errors.name.message}</p> : null}
             </div>
             <button className="btn btn-primary" type="submit">
-              SUBMIT
+              Submit
             </button>
           </form>
         </div>
