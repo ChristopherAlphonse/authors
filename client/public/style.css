@@ -1,6 +1,18 @@
 * {
   margin: 0.5rem;
 }
-.n-ame{
+.n-ame {
   font-weight: 600;
+}
+
+button {
+  background-color: rgb(47, 77, 207) !important;
+  border: none !important;
+  outline: none;
+  border-radius: 2rem !important;
+  padding: 0.3rem 2rem !important;
+}
+
+button:hover {
+  background-color: rgb(14, 37, 110) !important;
 }
