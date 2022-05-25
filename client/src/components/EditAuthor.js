@@ -14,9 +14,9 @@ const EditAuthor = (props) => {
       .get(`http://localhost:8000/api/author/${id}`)
       .then((response) => {
         setAuthorName(response.data.queriedOne.name);
-        console.log(response.data.queriedOne);
-        console.log(response.data.queriedOne._id);
-        console.log(response.data.queriedOne.name);
+        // console.log(response.data.queriedOne);
+        // console.log(response.data.queriedOne._id);
+        // console.log(response.data.queriedOne.name);
       })
       .catch((err) => {
         setAuthorNotFoundError(`Author not found using that ID`);

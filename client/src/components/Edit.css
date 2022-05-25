@@ -31,3 +31,8 @@ button:hover {
   bottom: 2.8rem;
   left: 16rem;
 }
+.btn-moved-2 {
+  position: relative;
+  bottom: 2.8rem;
+  left: 12rem;
+}
